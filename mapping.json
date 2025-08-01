@@ -1,0 +1,2677 @@
+{
+  "rc_ios_crash": {
+    "mappings": {
+      "properties": {
+        "exception": {
+          "properties": {
+            "rawdata": {
+              "type": "object"
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "time": {
+              "type": "date"
+            },
+            "type": {
+              "type": "keyword"
+            }
+          }
+        },
+        "header": {
+          "properties": {
+            "appid": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "platform": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "rcid": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "information": {
+          "properties": {
+            "application": {
+              "properties": {
+                "appbuild": {
+                  "type": "keyword"
+                },
+                "appidentifier": {
+                  "type": "keyword"
+                },
+                "appname": {
+                  "type": "keyword"
+                },
+                "appversion": {
+                  "type": "keyword"
+                },
+                "projectname": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "custom": {
+              "properties": {
+                "cusappversion": {
+                  "type": "keyword"
+                },
+                "cususerid": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "device": {
+              "properties": {
+                "countrycode": {
+                  "type": "keyword"
+                },
+                "devicname": {
+                  "type": "keyword"
+                },
+                "hardwareid": {
+                  "type": "keyword"
+                },
+                "model": {
+                  "type": "keyword"
+                },
+                "ram": {
+                  "type": "keyword"
+                },
+                "rom": {
+                  "type": "keyword"
+                },
+                "screensize": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "env": {
+              "properties": {
+                "applist": {
+                  "properties": {
+                    "appidentifier": {
+                      "type": "keyword"
+                    },
+                    "appname": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "batterylevel": {
+                  "type": "keyword"
+                },
+                "brightness": {
+                  "type": "keyword"
+                },
+                "isp": {
+                  "type": "keyword"
+                },
+                "localip": {
+                  "type": "keyword"
+                },
+                "location": {
+                  "properties": {
+                    "address": {
+                      "type": "keyword"
+                    },
+                    "area": {
+                      "type": "keyword"
+                    },
+                    "city": {
+                      "type": "keyword"
+                    },
+                    "gps": {
+                      "properties": {
+                        "lat": {
+                          "type": "text"
+                        },
+                        "lon": {
+                          "type": "text"
+                        }
+                      }
+                    },
+                    "province": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "netip": {
+                  "type": "keyword"
+                },
+                "netype": {
+                  "type": "keyword"
+                },
+                "performance": {
+                  "properties": {
+                    "cpusage": {
+                      "type": "keyword"
+                    },
+                    "memusage": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "ssid": {
+                  "type": "keyword"
+                },
+                "system": {
+                  "properties": {
+                    "osname": {
+                      "type": "keyword"
+                    },
+                    "osversion": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "time": {
+                  "properties": {
+                    "bootime": {
+                      "type": "keyword"
+                    },
+                    "currentime": {
+                      "type": "keyword"
+                    },
+                    "sysactivetime": {
+                      "type": "keyword"
+                    }
+                  }
+                }
+              }
+            },
+            "fingerprint": {
+              "properties": {
+                "localid": {
+                  "type": "keyword"
+                },
+                "vendorid": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "setting": {
+              "properties": {
+                "isvpn": {
+                  "type": "keyword"
+                },
+                "proxy": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "user": {
+              "properties": {
+                "phonenum": {
+                  "type": "text"
+                },
+                "userid": {
+                  "type": "keyword"
+                },
+                "username": {
+                  "type": "keyword"
+                },
+                "userstate": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "timestamp": {
+          "type": "date"
+        }
+      }
+    }
+  },
+  "rc_android_crash": {
+    "mappings": {
+      "properties": {
+        "exception": {
+          "properties": {
+            "rawdata": {
+              "type": "object"
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "time": {
+              "type": "date"
+            },
+            "type": {
+              "type": "keyword"
+            }
+          }
+        },
+        "header": {
+          "properties": {
+            "appid": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "platform": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "rcid": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "information": {
+          "properties": {
+            "application": {
+              "properties": {
+                "appermissions": {
+                  "type": "keyword"
+                },
+                "appidentifier": {
+                  "type": "keyword"
+                },
+                "appname": {
+                  "type": "keyword"
+                },
+                "appversion": {
+                  "type": "keyword"
+                },
+                "projectname": {
+                  "type": "text"
+                }
+              }
+            },
+            "custom": {
+              "properties": {
+                "cusappversion": {
+                  "type": "text"
+                },
+                "cususerid": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "device": {
+              "properties": {
+                "board": {
+                  "type": "text"
+                },
+                "brand": {
+                  "type": "text"
+                },
+                "countrycode": {
+                  "type": "keyword"
+                },
+                "cpuabi": {
+                  "type": "text"
+                },
+                "cpuname": {
+                  "type": "keyword"
+                },
+                "devicname": {
+                  "type": "keyword"
+                },
+                "display": {
+                  "type": "text"
+                },
+                "freerom": {
+                  "type": "keyword"
+                },
+                "manufacturer": {
+                  "type": "text"
+                },
+                "model": {
+                  "type": "keyword"
+                },
+                "ram": {
+                  "type": "keyword"
+                },
+                "rom": {
+                  "type": "keyword"
+                },
+                "screensize": {
+                  "type": "text"
+                }
+              }
+            },
+            "env": {
+              "properties": {
+                "applist": {
+                  "type": "object"
+                },
+                "batterylevel": {
+                  "type": "text"
+                },
+                "batterystatus": {
+                  "type": "keyword"
+                },
+                "batterytemp": {
+                  "type": "keyword"
+                },
+                "brightness": {
+                  "type": "keyword"
+                },
+                "bssid": {
+                  "type": "keyword"
+                },
+                "cellinfo": {
+                  "type": "keyword"
+                },
+                "dns": {
+                  "type": "keyword"
+                },
+                "imsi": {
+                  "type": "keyword"
+                },
+                "isp": {
+                  "type": "keyword"
+                },
+                "localip": {
+                  "type": "keyword"
+                },
+                "location": {
+                  "properties": {
+                    "address": {
+                      "type": "text"
+                    },
+                    "area": {
+                      "type": "keyword"
+                    },
+                    "city": {
+                      "type": "keyword"
+                    },
+                    "gps": {
+                      "properties": {
+                        "lat": {
+                          "type": "text"
+                        },
+                        "lon": {
+                          "type": "text"
+                        }
+                      }
+                    },
+                    "province": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "netip": {
+                  "type": "keyword"
+                },
+                "netype": {
+                  "type": "keyword"
+                },
+                "performance": {
+                  "properties": {
+                    "cpusage": {
+                      "type": "keyword"
+                    },
+                    "memusage": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "simid": {
+                  "type": "text"
+                },
+                "ssid": {
+                  "type": "keyword"
+                },
+                "system": {
+                  "properties": {
+                    "basebandversion": {
+                      "type": "keyword"
+                    },
+                    "kernelversion": {
+                      "type": "keyword"
+                    },
+                    "osname": {
+                      "type": "keyword"
+                    },
+                    "osversion": {
+                      "type": "keyword"
+                    },
+                    "uiversion": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "time": {
+                  "properties": {
+                    "activetime": {
+                      "type": "keyword"
+                    },
+                    "bootime": {
+                      "type": "keyword"
+                    },
+                    "currentime": {
+                      "type": "keyword"
+                    },
+                    "installtime": {
+                      "type": "keyword"
+                    },
+                    "sysactivetime": {
+                      "type": "keyword"
+                    }
+                  }
+                }
+              }
+            },
+            "fingerprint": {
+              "properties": {
+                "androidid": {
+                  "type": "keyword"
+                },
+                "bluetooth": {
+                  "type": "text"
+                },
+                "imei": {
+                  "type": "keyword"
+                },
+                "mac": {
+                  "type": "text"
+                },
+                "sn": {
+                  "type": "text"
+                },
+                "usbid": {
+                  "type": "text"
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "setting": {
+              "properties": {
+                "isvpn": {
+                  "type": "keyword"
+                },
+                "locationenabled": {
+                  "type": "keyword"
+                },
+                "proxy": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "user": {
+              "properties": {
+                "phonenum": {
+                  "type": "text"
+                },
+                "userid": {
+                  "type": "keyword"
+                },
+                "userstate": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "timestamp": {
+          "type": "date"
+        }
+      }
+    }
+  },
+  "rc_android_finger": {
+    "mappings": {
+      "properties": {
+        "androidid": {
+          "type": "keyword"
+        },
+        "appid": {
+          "type": "keyword"
+        },
+        "imei": {
+          "type": "keyword"
+        },
+        "information": {
+          "properties": {
+            "application": {
+              "properties": {
+                "appermissions": {
+                  "type": "keyword"
+                },
+                "appidentifier": {
+                  "type": "keyword"
+                },
+                "appname": {
+                  "type": "keyword"
+                },
+                "appversion": {
+                  "type": "keyword"
+                },
+                "projectname": {
+                  "type": "text"
+                }
+              }
+            },
+            "custom": {
+              "properties": {
+                "cusappversion": {
+                  "type": "text"
+                },
+                "cususerid": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "device": {
+              "properties": {
+                "board": {
+                  "type": "text"
+                },
+                "brand": {
+                  "type": "text"
+                },
+                "countrycode": {
+                  "type": "keyword"
+                },
+                "cpuabi": {
+                  "type": "text"
+                },
+                "cpuname": {
+                  "type": "keyword"
+                },
+                "devicname": {
+                  "type": "keyword"
+                },
+                "display": {
+                  "type": "text"
+                },
+                "freerom": {
+                  "type": "keyword"
+                },
+                "manufacturer": {
+                  "type": "text"
+                },
+                "model": {
+                  "type": "keyword"
+                },
+                "ram": {
+                  "type": "keyword"
+                },
+                "rom": {
+                  "type": "keyword"
+                },
+                "screensize": {
+                  "type": "text"
+                }
+              }
+            },
+            "env": {
+              "properties": {
+                "applist": {
+                  "type": "object"
+                },
+                "batterylevel": {
+                  "type": "text"
+                },
+                "batterystatus": {
+                  "type": "keyword"
+                },
+                "batterytemp": {
+                  "type": "keyword"
+                },
+                "brightness": {
+                  "type": "keyword"
+                },
+                "bssid": {
+                  "type": "keyword"
+                },
+                "cellinfo": {
+                  "type": "keyword"
+                },
+                "dns": {
+                  "type": "keyword"
+                },
+                "imsi": {
+                  "type": "keyword"
+                },
+                "isp": {
+                  "type": "keyword"
+                },
+                "localip": {
+                  "type": "keyword"
+                },
+                "location": {
+                  "properties": {
+                    "address": {
+                      "type": "text"
+                    },
+                    "area": {
+                      "type": "keyword"
+                    },
+                    "city": {
+                      "type": "keyword"
+                    },
+                    "gps": {
+                      "properties": {
+                        "lat": {
+                          "type": "text"
+                        },
+                        "lon": {
+                          "type": "text"
+                        }
+                      }
+                    },
+                    "province": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "netip": {
+                  "type": "keyword"
+                },
+                "netype": {
+                  "type": "keyword"
+                },
+                "performance": {
+                  "properties": {
+                    "cpusage": {
+                      "type": "keyword"
+                    },
+                    "memusage": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "simid": {
+                  "type": "text"
+                },
+                "ssid": {
+                  "type": "keyword"
+                },
+                "system": {
+                  "properties": {
+                    "basebandversion": {
+                      "type": "keyword"
+                    },
+                    "kernelversion": {
+                      "type": "keyword"
+                    },
+                    "osname": {
+                      "type": "keyword"
+                    },
+                    "osversion": {
+                      "type": "keyword"
+                    },
+                    "uiversion": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "time": {
+                  "properties": {
+                    "activetime": {
+                      "type": "keyword"
+                    },
+                    "bootime": {
+                      "type": "keyword"
+                    },
+                    "currentime": {
+                      "type": "keyword"
+                    },
+                    "installtime": {
+                      "type": "keyword"
+                    },
+                    "sysactivetime": {
+                      "type": "keyword"
+                    }
+                  }
+                }
+              }
+            },
+            "fingerprint": {
+              "properties": {
+                "androidid": {
+                  "type": "keyword"
+                },
+                "bluetooth": {
+                  "type": "text"
+                },
+                "imei": {
+                  "type": "keyword"
+                },
+                "mac": {
+                  "type": "text"
+                },
+                "sn": {
+                  "type": "text"
+                },
+                "usbid": {
+                  "type": "text"
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "setting": {
+              "properties": {
+                "isvpn": {
+                  "type": "keyword"
+                },
+                "locationenabled": {
+                  "type": "keyword"
+                },
+                "proxy": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "user": {
+              "properties": {
+                "phonenum": {
+                  "type": "text"
+                },
+                "userid": {
+                  "type": "keyword"
+                },
+                "userstate": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "mac": {
+          "type": "keyword"
+        },
+        "rcid": {
+          "type": "keyword"
+        },
+        "sn": {
+          "type": "keyword"
+        },
+        "timestamp": {
+          "type": "date"
+        }
+      }
+    }
+  },
+  "rc_android_config": {
+    "mappings": {
+      "properties": {
+        "appid": {
+          "type": "keyword"
+        },
+        "conf": {
+          "type": "object"
+        },
+        "timestamp": {
+          "type": "date"
+        },
+        "version": {
+          "type": "keyword"
+        }
+      }
+    }
+  },
+  "rc_android_attack": {
+    "mappings": {
+      "properties": {
+        "attack": {
+          "properties": {
+            "accessibility": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "accountchanges": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "addresschanges": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "attack": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "carrierTamper": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "certificateunusual": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "click": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "clone": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "debuger": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "devfake": {
+              "type": "object"
+            },
+            "emulator": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "equipmentchanges": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "fraudlib": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "frida": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "gamehacker": {
+              "type": "object"
+            },
+            "hijack": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "inCall": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "inject": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "ipchanges": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "mock": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "nativehook": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "remoteAssistance": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "repack": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "root": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "screencapture": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "screenhijack": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "screenshare": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "screenshot": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "sensitiveinfo": {
+              "properties": {
+                "developer": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                },
+                "usb": {
+                  "type": "text",
+                  "fields": {
+                    "keyword": {
+                      "type": "keyword",
+                      "ignore_above": 256
+                    }
+                  }
+                }
+              }
+            },
+            "substrate": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "tcpdump": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "threats": {
+              "type": "object"
+            },
+            "timeAccel": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "vcam": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "vpn": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "wifiproxy": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "extend": {
+          "type": "object"
+        },
+        "header": {
+          "properties": {
+            "appid": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "platform": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "rcid": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "information": {
+          "properties": {
+            "application": {
+              "properties": {
+                "appermissions": {
+                  "type": "keyword"
+                },
+                "appidentifier": {
+                  "type": "keyword"
+                },
+                "appname": {
+                  "type": "keyword"
+                },
+                "appversion": {
+                  "type": "keyword"
+                },
+                "projectname": {
+                  "type": "text"
+                }
+              }
+            },
+            "custom": {
+              "properties": {
+                "cusappversion": {
+                  "type": "text"
+                },
+                "cususerid": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "device": {
+              "properties": {
+                "board": {
+                  "type": "text"
+                },
+                "brand": {
+                  "type": "text"
+                },
+                "countrycode": {
+                  "type": "keyword"
+                },
+                "cpuabi": {
+                  "type": "text"
+                },
+                "cpuname": {
+                  "type": "keyword"
+                },
+                "devicname": {
+                  "type": "keyword"
+                },
+                "display": {
+                  "type": "text"
+                },
+                "freerom": {
+                  "type": "keyword"
+                },
+                "manufacturer": {
+                  "type": "text"
+                },
+                "model": {
+                  "type": "keyword"
+                },
+                "ram": {
+                  "type": "keyword"
+                },
+                "rom": {
+                  "type": "keyword"
+                },
+                "screensize": {
+                  "type": "text"
+                }
+              }
+            },
+            "env": {
+              "properties": {
+                "applist": {
+                  "type": "object"
+                },
+                "batterylevel": {
+                  "type": "text"
+                },
+                "batterystatus": {
+                  "type": "keyword"
+                },
+                "batterytemp": {
+                  "type": "keyword"
+                },
+                "brightness": {
+                  "type": "keyword"
+                },
+                "bssid": {
+                  "type": "keyword"
+                },
+                "cellinfo": {
+                  "type": "keyword"
+                },
+                "dns": {
+                  "type": "keyword"
+                },
+                "imsi": {
+                  "type": "keyword"
+                },
+                "isp": {
+                  "type": "keyword"
+                },
+                "localip": {
+                  "type": "keyword"
+                },
+                "location": {
+                  "properties": {
+                    "address": {
+                      "type": "text"
+                    },
+                    "area": {
+                      "type": "keyword"
+                    },
+                    "city": {
+                      "type": "keyword"
+                    },
+                    "gps": {
+                      "properties": {
+                        "lat": {
+                          "type": "text"
+                        },
+                        "lon": {
+                          "type": "text"
+                        }
+                      }
+                    },
+                    "province": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "netip": {
+                  "type": "keyword"
+                },
+                "netype": {
+                  "type": "keyword"
+                },
+                "performance": {
+                  "properties": {
+                    "cpusage": {
+                      "type": "keyword"
+                    },
+                    "memusage": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "simid": {
+                  "type": "text"
+                },
+                "ssid": {
+                  "type": "keyword"
+                },
+                "system": {
+                  "properties": {
+                    "basebandversion": {
+                      "type": "keyword"
+                    },
+                    "kernelversion": {
+                      "type": "keyword"
+                    },
+                    "osname": {
+                      "type": "keyword"
+                    },
+                    "osversion": {
+                      "type": "keyword"
+                    },
+                    "uiversion": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "time": {
+                  "properties": {
+                    "activetime": {
+                      "type": "keyword"
+                    },
+                    "bootime": {
+                      "type": "keyword"
+                    },
+                    "currentime": {
+                      "type": "keyword"
+                    },
+                    "installtime": {
+                      "type": "keyword"
+                    },
+                    "sysactivetime": {
+                      "type": "keyword"
+                    }
+                  }
+                }
+              }
+            },
+            "fingerprint": {
+              "properties": {
+                "androidid": {
+                  "type": "keyword"
+                },
+                "bluetooth": {
+                  "type": "text"
+                },
+                "imei": {
+                  "type": "keyword"
+                },
+                "mac": {
+                  "type": "text"
+                },
+                "sn": {
+                  "type": "text"
+                },
+                "usbid": {
+                  "type": "text"
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "setting": {
+              "properties": {
+                "isvpn": {
+                  "type": "keyword"
+                },
+                "locationenabled": {
+                  "type": "keyword"
+                },
+                "proxy": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "user": {
+              "properties": {
+                "phonenum": {
+                  "type": "text"
+                },
+                "userid": {
+                  "type": "keyword"
+                },
+                "userstate": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "level": {
+          "type": "keyword"
+        },
+        "timestamp": {
+          "type": "date"
+        }
+      }
+    }
+  },
+  "rc_ios_config": {
+    "mappings": {
+      "properties": {
+        "appid": {
+          "type": "keyword"
+        },
+        "conf": {
+          "type": "object"
+        },
+        "timestamp": {
+          "type": "date"
+        },
+        "version": {
+          "type": "keyword"
+        }
+      }
+    }
+  },
+  "rc_ios_finger": {
+    "mappings": {
+      "properties": {
+        "appid": {
+          "type": "keyword"
+        },
+        "information": {
+          "properties": {
+            "application": {
+              "properties": {
+                "appbuild": {
+                  "type": "keyword"
+                },
+                "appidentifier": {
+                  "type": "keyword"
+                },
+                "appname": {
+                  "type": "keyword"
+                },
+                "appversion": {
+                  "type": "keyword"
+                },
+                "projectname": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "custom": {
+              "properties": {
+                "cusappversion": {
+                  "type": "keyword"
+                },
+                "cususerid": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "device": {
+              "properties": {
+                "countrycode": {
+                  "type": "keyword"
+                },
+                "devicname": {
+                  "type": "keyword"
+                },
+                "hardwareid": {
+                  "type": "keyword"
+                },
+                "model": {
+                  "type": "keyword"
+                },
+                "ram": {
+                  "type": "keyword"
+                },
+                "rom": {
+                  "type": "keyword"
+                },
+                "screensize": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "env": {
+              "properties": {
+                "applist": {
+                  "properties": {
+                    "appidentifier": {
+                      "type": "keyword"
+                    },
+                    "appname": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "batterylevel": {
+                  "type": "keyword"
+                },
+                "brightness": {
+                  "type": "keyword"
+                },
+                "isp": {
+                  "type": "keyword"
+                },
+                "localip": {
+                  "type": "keyword"
+                },
+                "location": {
+                  "properties": {
+                    "address": {
+                      "type": "keyword"
+                    },
+                    "area": {
+                      "type": "keyword"
+                    },
+                    "city": {
+                      "type": "keyword"
+                    },
+                    "gps": {
+                      "properties": {
+                        "lat": {
+                          "type": "text"
+                        },
+                        "lon": {
+                          "type": "text"
+                        }
+                      }
+                    },
+                    "province": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "netip": {
+                  "type": "keyword"
+                },
+                "netype": {
+                  "type": "keyword"
+                },
+                "performance": {
+                  "properties": {
+                    "cpusage": {
+                      "type": "keyword"
+                    },
+                    "memusage": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "ssid": {
+                  "type": "keyword"
+                },
+                "system": {
+                  "properties": {
+                    "osname": {
+                      "type": "keyword"
+                    },
+                    "osversion": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "time": {
+                  "properties": {
+                    "bootime": {
+                      "type": "keyword"
+                    },
+                    "currentime": {
+                      "type": "keyword"
+                    },
+                    "sysactivetime": {
+                      "type": "keyword"
+                    }
+                  }
+                }
+              }
+            },
+            "fingerprint": {
+              "properties": {
+                "localid": {
+                  "type": "keyword"
+                },
+                "vendorid": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "setting": {
+              "properties": {
+                "isvpn": {
+                  "type": "keyword"
+                },
+                "proxy": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "user": {
+              "properties": {
+                "phonenum": {
+                  "type": "text"
+                },
+                "userid": {
+                  "type": "keyword"
+                },
+                "username": {
+                  "type": "keyword"
+                },
+                "userstate": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "localid": {
+          "type": "keyword"
+        },
+        "rcid": {
+          "type": "keyword"
+        },
+        "timestamp": {
+          "type": "date"
+        },
+        "vendorid": {
+          "type": "keyword"
+        }
+      }
+    }
+  },
+  "rc_appinfos": {
+    "mappings": {
+      "properties": {
+        "appName": {
+          "type": "keyword"
+        },
+        "appid": {
+          "type": "keyword"
+        },
+        "appversion": {
+          "type": "keyword"
+        },
+        "platform": {
+          "type": "keyword"
+        },
+        "timestamp": {
+          "type": "date"
+        }
+      }
+    }
+  },
+  "rc_android_information": {
+    "mappings": {
+      "properties": {
+        "header": {
+          "properties": {
+            "appid": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "platform": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "rcid": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "information": {
+          "properties": {
+            "application": {
+              "properties": {
+                "appermissions": {
+                  "type": "keyword"
+                },
+                "appidentifier": {
+                  "type": "keyword"
+                },
+                "appname": {
+                  "type": "keyword"
+                },
+                "appversion": {
+                  "type": "keyword"
+                },
+                "projectname": {
+                  "type": "text"
+                }
+              }
+            },
+            "custom": {
+              "properties": {
+                "cusappversion": {
+                  "type": "text"
+                },
+                "cususerid": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "device": {
+              "properties": {
+                "board": {
+                  "type": "text"
+                },
+                "brand": {
+                  "type": "text"
+                },
+                "countrycode": {
+                  "type": "keyword"
+                },
+                "cpuabi": {
+                  "type": "text"
+                },
+                "cpuname": {
+                  "type": "keyword"
+                },
+                "devicname": {
+                  "type": "keyword"
+                },
+                "display": {
+                  "type": "text"
+                },
+                "freerom": {
+                  "type": "keyword"
+                },
+                "manufacturer": {
+                  "type": "text"
+                },
+                "model": {
+                  "type": "keyword"
+                },
+                "ram": {
+                  "type": "keyword"
+                },
+                "rom": {
+                  "type": "keyword"
+                },
+                "screensize": {
+                  "type": "text"
+                }
+              }
+            },
+            "env": {
+              "properties": {
+                "applist": {
+                  "type": "object"
+                },
+                "batterylevel": {
+                  "type": "text"
+                },
+                "batterystatus": {
+                  "type": "keyword"
+                },
+                "batterytemp": {
+                  "type": "keyword"
+                },
+                "brightness": {
+                  "type": "keyword"
+                },
+                "bssid": {
+                  "type": "keyword"
+                },
+                "cellinfo": {
+                  "type": "keyword"
+                },
+                "dns": {
+                  "type": "keyword"
+                },
+                "imsi": {
+                  "type": "keyword"
+                },
+                "isp": {
+                  "type": "keyword"
+                },
+                "localip": {
+                  "type": "keyword"
+                },
+                "location": {
+                  "properties": {
+                    "address": {
+                      "type": "text"
+                    },
+                    "area": {
+                      "type": "keyword"
+                    },
+                    "city": {
+                      "type": "keyword"
+                    },
+                    "gps": {
+                      "properties": {
+                        "lat": {
+                          "type": "text"
+                        },
+                        "lon": {
+                          "type": "text"
+                        }
+                      }
+                    },
+                    "province": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "netip": {
+                  "type": "keyword"
+                },
+                "netype": {
+                  "type": "keyword"
+                },
+                "performance": {
+                  "properties": {
+                    "cpusage": {
+                      "type": "keyword"
+                    },
+                    "memusage": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "simid": {
+                  "type": "text"
+                },
+                "ssid": {
+                  "type": "keyword"
+                },
+                "system": {
+                  "properties": {
+                    "basebandversion": {
+                      "type": "keyword"
+                    },
+                    "kernelversion": {
+                      "type": "keyword"
+                    },
+                    "osname": {
+                      "type": "keyword"
+                    },
+                    "osversion": {
+                      "type": "keyword"
+                    },
+                    "uiversion": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "time": {
+                  "properties": {
+                    "activetime": {
+                      "type": "keyword"
+                    },
+                    "bootime": {
+                      "type": "keyword"
+                    },
+                    "currentime": {
+                      "type": "keyword"
+                    },
+                    "installtime": {
+                      "type": "keyword"
+                    },
+                    "sysactivetime": {
+                      "type": "keyword"
+                    }
+                  }
+                }
+              }
+            },
+            "fingerprint": {
+              "properties": {
+                "androidid": {
+                  "type": "keyword"
+                },
+                "bluetooth": {
+                  "type": "text"
+                },
+                "imei": {
+                  "type": "keyword"
+                },
+                "mac": {
+                  "type": "text"
+                },
+                "sn": {
+                  "type": "text"
+                },
+                "usbid": {
+                  "type": "text"
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "setting": {
+              "properties": {
+                "isvpn": {
+                  "type": "keyword"
+                },
+                "locationenabled": {
+                  "type": "keyword"
+                },
+                "proxy": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "user": {
+              "properties": {
+                "phonenum": {
+                  "type": "text"
+                },
+                "userid": {
+                  "type": "keyword"
+                },
+                "userstate": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "timestamp": {
+          "type": "date"
+        }
+      }
+    }
+  },
+  "rc_ios_attack": {
+    "mappings": {
+      "properties": {
+        "attack": {
+          "properties": {
+            "accountchanges": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "addresschanges": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "attack": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "debuger": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "devfake": {
+              "type": "object"
+            },
+            "emulator": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "equipmentchanges": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "gamehacker": {
+              "type": "object"
+            },
+            "ipchanges": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "root": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "screencapture": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "screenshare": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "screenshot": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "threats": {
+              "type": "object"
+            },
+            "wifiproxy": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "extend": {
+          "type": "object"
+        },
+        "header": {
+          "properties": {
+            "appid": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "platform": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "rcid": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "information": {
+          "properties": {
+            "application": {
+              "properties": {
+                "appbuild": {
+                  "type": "keyword"
+                },
+                "appidentifier": {
+                  "type": "keyword"
+                },
+                "appname": {
+                  "type": "keyword"
+                },
+                "appversion": {
+                  "type": "keyword"
+                },
+                "projectname": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "custom": {
+              "properties": {
+                "cusappversion": {
+                  "type": "keyword"
+                },
+                "cususerid": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "device": {
+              "properties": {
+                "countrycode": {
+                  "type": "keyword"
+                },
+                "devicname": {
+                  "type": "keyword"
+                },
+                "hardwareid": {
+                  "type": "keyword"
+                },
+                "model": {
+                  "type": "keyword"
+                },
+                "ram": {
+                  "type": "keyword"
+                },
+                "rom": {
+                  "type": "keyword"
+                },
+                "screensize": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "env": {
+              "properties": {
+                "applist": {
+                  "properties": {
+                    "appidentifier": {
+                      "type": "keyword"
+                    },
+                    "appname": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "batterylevel": {
+                  "type": "keyword"
+                },
+                "brightness": {
+                  "type": "keyword"
+                },
+                "isp": {
+                  "type": "keyword"
+                },
+                "localip": {
+                  "type": "keyword"
+                },
+                "location": {
+                  "properties": {
+                    "address": {
+                      "type": "keyword"
+                    },
+                    "area": {
+                      "type": "keyword"
+                    },
+                    "city": {
+                      "type": "keyword"
+                    },
+                    "gps": {
+                      "properties": {
+                        "lat": {
+                          "type": "text"
+                        },
+                        "lon": {
+                          "type": "text"
+                        }
+                      }
+                    },
+                    "province": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "netip": {
+                  "type": "keyword"
+                },
+                "netype": {
+                  "type": "keyword"
+                },
+                "performance": {
+                  "properties": {
+                    "cpusage": {
+                      "type": "keyword"
+                    },
+                    "memusage": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "ssid": {
+                  "type": "keyword"
+                },
+                "system": {
+                  "properties": {
+                    "osname": {
+                      "type": "keyword"
+                    },
+                    "osversion": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "time": {
+                  "properties": {
+                    "bootime": {
+                      "type": "keyword"
+                    },
+                    "currentime": {
+                      "type": "keyword"
+                    },
+                    "sysactivetime": {
+                      "type": "keyword"
+                    }
+                  }
+                }
+              }
+            },
+            "fingerprint": {
+              "properties": {
+                "localid": {
+                  "type": "keyword"
+                },
+                "vendorid": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "setting": {
+              "properties": {
+                "isvpn": {
+                  "type": "keyword"
+                },
+                "proxy": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "user": {
+              "properties": {
+                "phonenum": {
+                  "type": "text"
+                },
+                "userid": {
+                  "type": "keyword"
+                },
+                "username": {
+                  "type": "keyword"
+                },
+                "userstate": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "level": {
+          "type": "keyword"
+        },
+        "timestamp": {
+          "type": "date"
+        }
+      }
+    }
+  },
+  "rc_ios_information": {
+    "mappings": {
+      "properties": {
+        "header": {
+          "properties": {
+            "appid": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "platform": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "rcid": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "version": {
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "information": {
+          "properties": {
+            "application": {
+              "properties": {
+                "appbuild": {
+                  "type": "keyword"
+                },
+                "appidentifier": {
+                  "type": "keyword"
+                },
+                "appname": {
+                  "type": "keyword"
+                },
+                "appversion": {
+                  "type": "keyword"
+                },
+                "projectname": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "custom": {
+              "properties": {
+                "cusappversion": {
+                  "type": "keyword"
+                },
+                "cususerid": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "device": {
+              "properties": {
+                "countrycode": {
+                  "type": "keyword"
+                },
+                "devicname": {
+                  "type": "keyword"
+                },
+                "hardwareid": {
+                  "type": "keyword"
+                },
+                "model": {
+                  "type": "keyword"
+                },
+                "ram": {
+                  "type": "keyword"
+                },
+                "rom": {
+                  "type": "keyword"
+                },
+                "screensize": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "env": {
+              "properties": {
+                "applist": {
+                  "properties": {
+                    "appidentifier": {
+                      "type": "keyword"
+                    },
+                    "appname": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "batterylevel": {
+                  "type": "keyword"
+                },
+                "brightness": {
+                  "type": "keyword"
+                },
+                "isp": {
+                  "type": "keyword"
+                },
+                "localip": {
+                  "type": "keyword"
+                },
+                "location": {
+                  "properties": {
+                    "address": {
+                      "type": "keyword"
+                    },
+                    "area": {
+                      "type": "keyword"
+                    },
+                    "city": {
+                      "type": "keyword"
+                    },
+                    "gps": {
+                      "properties": {
+                        "lat": {
+                          "type": "text"
+                        },
+                        "lon": {
+                          "type": "text"
+                        }
+                      }
+                    },
+                    "province": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "netip": {
+                  "type": "keyword"
+                },
+                "netype": {
+                  "type": "keyword"
+                },
+                "performance": {
+                  "properties": {
+                    "cpusage": {
+                      "type": "keyword"
+                    },
+                    "memusage": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "ssid": {
+                  "type": "keyword"
+                },
+                "system": {
+                  "properties": {
+                    "osname": {
+                      "type": "keyword"
+                    },
+                    "osversion": {
+                      "type": "keyword"
+                    }
+                  }
+                },
+                "time": {
+                  "properties": {
+                    "bootime": {
+                      "type": "keyword"
+                    },
+                    "currentime": {
+                      "type": "keyword"
+                    },
+                    "sysactivetime": {
+                      "type": "keyword"
+                    }
+                  }
+                }
+              }
+            },
+            "fingerprint": {
+              "properties": {
+                "localid": {
+                  "type": "keyword"
+                },
+                "vendorid": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "reserved": {
+              "type": "integer"
+            },
+            "setting": {
+              "properties": {
+                "isvpn": {
+                  "type": "keyword"
+                },
+                "proxy": {
+                  "type": "keyword"
+                }
+              }
+            },
+            "user": {
+              "properties": {
+                "phonenum": {
+                  "type": "text"
+                },
+                "userid": {
+                  "type": "keyword"
+                },
+                "username": {
+                  "type": "keyword"
+                },
+                "userstate": {
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "timestamp": {
+          "type": "date"
+        }
+      }
+    }
+  }
+}
