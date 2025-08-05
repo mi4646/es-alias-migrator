@@ -26,16 +26,16 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # --- elasticsearch 配置 ---
-agreement = "http"
-host = "192.168.1.183"
-port = "9203"
+agreement = os.getenv("AGREEMENT", "http")
+host = os.getenv("HOST", "192.168.1.183")
+port = os.getenv("PORT", "9203")
 hosts = [f'{agreement}://{ip}:{port}' for ip in host.split(',')]  # 集群ip和端口使用英文,隔开 localhost,192.168.1.252
-username = "elastic"
-password = "admin@123"
-timeout = 60
-max_retries = 5
-verify_certs = False
-retry_on_timeout = True
+username = os.getenv("USERNAME", "elastic")
+password = os.getenv("PASSWORD", "admin@123")
+timeout = os.getenv("TIMEOUT", 5)
+max_retries = int(os.getenv("MAX_RETRIES", 5))
+verify_certs = bool(os.getenv("VERIFY_CERTS", True))
+retry_on_timeout = bool(os.getenv("RETRY_ON_TIMEOUT", True))
 
 es = None
 
@@ -504,7 +504,7 @@ def parse_arguments():
 
     )
     parser.add_argument("-h", "--help", action="help", help="显示帮助信息", default=argparse.SUPPRESS)
-    parser.add_argument("-v", '--version', action='version', help="显示版本信息", version='1.3.0')
+    parser.add_argument("-v", '--version', action='version', help="显示版本信息", version='1.3.1')
 
     parser.add_argument("-o", "--old_index", type=str, required=False,
                         help="指定旧索引名称。如果未指定，则自动从Elasticsearch中查找当前别名指向的最新索引。")
