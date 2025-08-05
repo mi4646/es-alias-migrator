@@ -1,0 +1,10 @@
+*~
+*.~
+*.pyc
+*.swp
+*.swo
+.idea/
+log/
+logs/
+*.sass-cache
+.python-version

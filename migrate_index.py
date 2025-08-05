@@ -7,28 +7,15 @@ import logging
 import argparse
 import warnings
 from typing import Optional
-from urllib3.exceptions import InsecureRequestWarning
+import elasticsearch
+from packaging import version
+from urllib3.exceptions import InsecureRequestWarning, NewConnectionError  # <-- 添加 NewConnectionError
 
 # Suppress SSL-related warnings
 warnings.simplefilter('ignore', InsecureRequestWarning)
 warnings.filterwarnings("ignore", message=".*verify_certs=False.*")
-
 from elasticsearch import exceptions
 from elasticsearch import Elasticsearch
-from elasticsearch_dsl.connections import connections
-
-# Connect to Elasticsearch cluster
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(sys.argv[0]))))
-from service.utils.config import config
-
-es = connections.create_connection(
-    hosts=config.db_hosts,
-    http_auth=(config.db_user, config.db_pwd),
-    verify_certs=config.db_verify_certs,
-    timeout=config.db_timeout,
-    max_retries=config.db_max_retries,
-    retry_on_timeout=config.db_retry_on_timeout
-)
 
 # 配置日志格式和级别
 logging.basicConfig(
@@ -37,6 +24,79 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 logger = logging.getLogger(__name__)
+
+# --- elasticsearch 配置 ---
+agreement = "http"
+host = "192.168.1.183"
+port = "9203"
+hosts = [f'{agreement}://{ip}:{port}' for ip in host.split(',')]  # 集群ip和端口使用英文,隔开 localhost,192.168.1.252
+username = "elastic"
+password = "admin@123"
+timeout = 60
+max_retries = 5
+verify_certs = False
+retry_on_timeout = True
+
+es = None
+
+# 获取 elasticsearch 库的版本
+es_version = version.parse(elasticsearch.__versionstr__)
+# 判断版本以决定使用哪个参数
+# 通常 8.x 及以上使用 basic_auth, 7.x 及以下使用 http_auth
+# 这里假设 8.0.0 是分界点，你可以根据实际情况调整
+AUTH_PARAM_NAME = 'basic_auth' if es_version >= version.parse("8.0.0") else 'http_auth'
+logger.info(f"检测到的Elasticsearch-PY版本：{es_version}. 使用auth参数：'{AUTH_PARAM_NAME}'")
+
+logger.info("尝试创建Elasticsearch客户端...")
+try:
+    es_kwargs = {
+        'hosts': hosts,
+        'verify_certs': verify_certs,
+        'request_timeout': timeout,
+        'retry_on_timeout': retry_on_timeout,
+        'max_retries': max_retries,
+        AUTH_PARAM_NAME: (username, password)
+    }
+
+    es = Elasticsearch(**es_kwargs)
+    logger.debug("Elasticsearch客户端对象创建.")
+
+except Exception as e:
+    logger.error(f'无法创建Elasticsearch客户端对象: {e}')
+    # 注意：即使客户端对象创建成功，实际连接也可能在后续 ping 时失败
+    # 但创建失败通常意味着配置问题，可以直接退出
+    sys.exit(1)
+
+# --- 尝试 ping 以验证连接 ---
+# 即使客户端对象创建成功，也需要 ping 来验证实际网络连接
+if es:
+    logger.info("试图 ping elasticsearch...")
+    try:
+        print(es.ping())
+        if es.ping():
+            logger.info("成功连接和ping通Elasticsearch.")
+        else:
+            # ping 返回 False 通常意味着连接尝试失败（例如连接被拒绝）
+            # urllib3 可能已经在此时记录了详细的 WARNING 日志
+            logger.error(f"无法在{hosts}上ping elasticsearch.请检查Elasticsearch是否正在运行和访问.")
+            es = None  # 标记连接失败
+
+    except NewConnectionError as e:  # 捕获具体的连接被拒绝异常
+        # 你的自定义错误信息
+        logger.error(f'FAIL被连接到 Elasticsearch：连接拒绝。 '
+                     f'请检查 Elasticsearch是否在 {hosts} 处运行并可以访问。 '
+                     f'Error：{e}')
+        # urllib3 内部可能仍然会打印其详细的堆栈跟踪日志
+        es = None
+
+    except Exception as e:  # 捕获 ping 过程中可能的其他错误
+        logger.error(f'ping elasticsearch 时发生了意外错误: {e}')
+        es = None
+
+if es is None:
+    # 如果 es 为 None 或 ping 失败，则记录最终错误并退出
+    logger.error(f"elasticsearch未连接成功")  # 保留你的原始错误信息
+    sys.exit(1)
 
 
 def estimate_reindex_params(doc_count):
@@ -426,14 +486,14 @@ def parse_arguments():
 
         f"\n"
         f"  # 示例命令 1: 使用映射文件完整调用\n"
-        f"  python3 /var/www/rc-api-server/install/migrate_index.py \\\n"
+        f"  python3 {script_name} \\\n"
         f"    --old_index rc_android_attack \\\n"
         f"    --new_index rc_android_attack_$(date +%s) \\\n"
         f"    --alias rc_android_attack \\\n"
-        f"    --mapping_file_path /var/www/rc-api-server/install/mapping.json\n"
+        f"    --mapping_file_path mapping.json\n"
         f"\n"
         f"  # 示例命令 2: 仅使用别名自动处理索引和默认映射\n"
-        f"  python3 /var/www/rc-api-server/install/migrate_index.py --alias rc_android_attack\n"
+        f"  python3 {script_name} --alias rc_android_attack\n"
     )
 
     parser = argparse.ArgumentParser(
@@ -444,7 +504,7 @@ def parse_arguments():
 
     )
     parser.add_argument("-h", "--help", action="help", help="显示帮助信息", default=argparse.SUPPRESS)
-    parser.add_argument("-v", '--version', action='version', help="显示版本信息", version='1.2.0')
+    parser.add_argument("-v", '--version', action='version', help="显示版本信息", version='1.3.0')
 
     parser.add_argument("-o", "--old_index", type=str, required=False,
                         help="指定旧索引名称。如果未指定，则自动从Elasticsearch中查找当前别名指向的最新索引。")
@@ -507,7 +567,7 @@ def main():
 
     else:
         # 默认路径兜底
-        mapping_file = "/var/www/rc-api-server/install/mapping.json"
+        mapping_file = "mapping.json"
         if not os.path.exists(mapping_file):
             logger.error("[错误] 未指定映射参数，也找不到默认映射文件")
             sys.exit(1)
