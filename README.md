@@ -32,17 +32,17 @@ pip install urllib3 elasticsearch packaging
 
 ```bash
 # 示例 1: 使用映射文件完整调用
-python3 es_migration_tool.py \
+python3 migrate_index.py \
   --old_index rc_android_attack \
   --new_index rc_android_attack_$(date +%s) \
   --alias rc_android_attack \
   --mapping_file_path mapping.json
 
 # 示例 2: 仅提供 alias，自动查找最新索引并执行迁移
-python3 es_migration_tool.py --alias rc_android_attack
+python3 migrate_index.py --alias rc_android_attack
 
 # 示例 3: 通过 JSON 字符串传入映射内容
-python3 es_migration_tool.py \
+python3 migrate_index.py \
   --alias rc_android_attack \
   --mapping '{"properties": {"name": {"type": "text"}}}'
 ```
